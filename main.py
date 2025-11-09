@@ -106,7 +106,7 @@ async def handle_text(message: Message):
     if text in symbol_map:
         coin_id = symbol_map[text]
         price_data = await get_crypto_price(coin_id)
-        if price_data:  # ← ИСПРАВЛЕНО: было "if price_"
+        if price_data:
             ch = price_data["change_24h"]
             emoji = "📈" if ch >= 0 else "📉"
             await message.answer(
